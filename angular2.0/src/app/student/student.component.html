@@ -1,0 +1,30 @@
+<p>student works!</p>
+
+<!--step 3 post method api-->
+<div>
+    <label for="">name</label>
+    <input type="text" [(ngModel)]="student.name"><br>
+    <label for="">rollno</label>
+    <input type="text" [(ngModel)]="student.rollno"><br>
+    <button class="btn" (click)="addstudent()">add list</button>
+</div>
+
+<button (click)="studentdetails()">get list</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>rollno</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of student1">
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.rollno}}</td>
+        </tr>
+    </tbody>
+
+</table>

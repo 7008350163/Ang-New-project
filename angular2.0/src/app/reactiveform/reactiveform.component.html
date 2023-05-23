@@ -1,0 +1,13 @@
+<p>reactiveform works!</p>
+<form action=""[formGroup]="loginform" (ngsubmit)="login()">
+<h2>Login form</h2>
+<label for="">email</label><br>
+<input type="email" name="email" id="email" formControlName="email" required>
+<!--validation-->
+<span *ngIf="email && email.invalid && email.touched">email invalid</span>
+<br>
+<label for="">password</label><br>
+<input type="password" name="password" id="password" formControlName="password" required><br>
+<span *ngIf="password && password.invalid && password.touched ">password error</span>
+<button class="btn btn primary" [disabled]="loginform.invalid">submit</button>
+</form>

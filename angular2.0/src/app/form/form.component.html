@@ -1,0 +1,27 @@
+<p>form works! template driven form</p>
+
+<form #templateform="ngForm" (ngSubmit)="onsubmit(templateform)">
+<p>
+    <label for="firstname">firstname</label><br>
+    <input type="text" id="firstname" required minlength="4" ngModel pattern="[a-zA-Z]*" name="firstname"#firstname="ngModel" [(ngModel)]="form.firstname">
+</p>
+<p *ngIf="firstname && firstname.touched && firstname.invalid">above field is empty</p>
+<p>
+    <label for="lastname">lastname</label><br>
+    <input type="text" id="lastname" ngModel pattern="[a-zA-Z]*" [(ngModel)]="form.lastname" required name="lastname" #lastname="ngModel">
+</p>
+<p *ngIf="lastname && lastname.touched && lastname.invalid">try again</p>
+<p>
+    <label for="email">email</label><br>
+    <input type="email" id="email" required minlength="5"pattern="^[a-z0-9._%-+]+@[a-z0-9.-]+$" [(ngModel)]="form.email" ngModel name="email" #email="ngModel">
+</p>
+<p *ngIf="email && email.touched && email.invalid" style="color:red">email field cannot be empty</p>
+<p>
+    <label for="password">password</label><br>
+    <input type="password" id="password" required minlength="8" ngModel pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" [(ngModel)]="form.password" #password="ngModel" maxlength="10"ngModel name="password">
+</p> 
+<p *ngIf="password && password.invalid">enter valid password</p>
+<p>
+    <button class="btn btn outline success" [disabled]="templateform.invalid" type="submit">submit</button>
+</p>
+</form>

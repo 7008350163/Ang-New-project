@@ -1,0 +1,29 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "harish",
+      "rollno": 45
+    },
+    {
+      "id": 2,
+      "name": "suyash",
+      "rollno": 43
+    },
+    {
+      "id": 3,
+      "name": "lokesh",
+      "rollno": 25
+    },
+    {
+      "name": "harry",
+      "rollno": "25",
+      "id": 4
+    },
+    {
+      "name": "jojo",
+      "rollno": "18",
+      "id": 5
+    }
+  ]
+}
